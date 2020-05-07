@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+  
+  <struts>
+  
+<!-- 	  <constant name="struts.devMode" value="true" /> -->
+	  
+<!-- 	  <include file="demo.xml"></include> -->
+<!-- 	  <include file="user.xml"></include> -->
+	  
+	  <package name="default" extends="struts-default">
+	  	
+	  	
+	  	<action name="">
+	  		<result>/welcome.jsp</result>
+	  	</action>
+	  	
+	  	
+	  	<action name="LoginAction" class="com.login.LoginAction"> 
+	  		<result name="success">/success.jsp</result>
+	  		<result name="error">/error.jsp</result>
+	  	</action>
+	  	
+	  	<action name="AddProductAction" class="com.AddProduct.AddProductAction"> 
+	  		<result name="success">/AddProduct-Success.jsp</result>
+	  		<result name="error">/welcome.jsp</result>
+	  	</action>
+	  	
+	  	<action name="ProductList" class="com.AddProduct.FetchRecords">
+			<result name="success">/ProductList-BidderView.jsp</result>	 		
+		</action>
+	  	
+	  	<action name="ProductListSellerView" class="com.AddProduct.FetchRecords">
+			<result name="success">/ProductList-SellerView.jsp</result>	 		
+		</action>
+		
+	  	<action name="AddBidderAction" class="com.Bidder.AddBidderAction">
+			<result name="success">/AddBidder-Success.jsp</result>
+			<result name="error">/AddBidder-Error.jsp</result>	 		
+		</action>
+		
+	  	<action name="BidderList" class="com.Bidder.FetchRecords">
+			<result name="success">/BidderList.jsp</result>	 		
+		</action>
+	  	
+	  	<action name="Winner" class="com.Bidder.FetchRecordsWinner">
+			<result name="success">/Winner.jsp</result>	 		
+		</action>
+		
+	  </package>
+	  
+	  
+  
+  </struts>
